@@ -10,3 +10,10 @@
   - [ ] Throw errors if:
     - [ ] `*.liquid.json` is invalid syntax, following custom schema
     - [ ] Tokens or functions are undefined
+    
+## Functional Requirements
+
+- [ ] Schema rules must be provided the following parameters:
+  - [ ] Reference to the methods library in order to execute other schema rules as needed to compute a truthy/falsy answer on its string parsing
+  - [ ] Next node object (uncomputed) or callback that will run once the next node is found.
+  - [ ] (Optional) Previous node object ( no need to be able to manipulate this)
