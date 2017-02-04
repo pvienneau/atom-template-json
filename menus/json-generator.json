@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Generate JSON",
+        "command": "json-generator:generate"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "json-generator",
+          "submenu": [
+            {
+              "label": "Generate",
+              "command": "json-generator:generate"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

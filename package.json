@@ -1,0 +1,18 @@
+{
+    "name": "json-generator",
+    "main": "./lib/json-generator",
+    "scripts": {
+        "test": "atom --test --timeout 4 ./spec/parser.spec.js"
+    },
+    "version": "0.0.0",
+    "description": "A short description of your package",
+    "keywords": [],
+    "repository": "https://github.com/atom/json-generator",
+    "license": "MIT",
+    "engines": {
+        "atom": ">=1.0.0 <2.0.0"
+    },
+    "dependencies": {
+        "moment": "^2.17.1"
+    }
+}
