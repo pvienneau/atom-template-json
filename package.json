@@ -1,5 +1,5 @@
 {
-    "name": "json-generator",
+    "name": "atom-json-generator",
     "main": "./lib/json-generator",
     "scripts": {
         "test": "atom --test --timeout 4 ./spec/parser.spec.js"
@@ -13,6 +13,12 @@
         "atom": ">=1.0.0 <2.0.0"
     },
     "dependencies": {
+        "atom-package-deps": "^4.3.1",
+        "extensible-compiler": "^1.1.1",
+        "fs": "^0.0.1-security",
         "moment": "^2.17.1"
-    }
+    },
+    "package-deps": [
+        "atom-language-template-json"
+    ]
 }
