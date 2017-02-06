@@ -1,5 +1,5 @@
 {
   "atom-workspace": {
-    "ctrl-alt-o": "json-generator:toggle!"
+    "cmd-shift-j": "json-generator:generate"
   }
 }

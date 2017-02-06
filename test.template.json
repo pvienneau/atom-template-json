@@ -1,4 +1,5 @@
-{
-    "test": "hello world",
-    "value": {{string(15)}}
-}
+[
+   {
+       "test": {{string(15)}}
+   }
+]

@@ -1,4 +1,4 @@
-{
-    "test": "hello world",
-    "value": "Lorem ipsum dol"
-}
+[{
+        "test": string(15)
+    }
+]
