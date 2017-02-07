@@ -2,9 +2,9 @@
 
 Simply define your JSON template structure, while Atom generates the JSON data for you.
 
-## Code Example:
+## Code Example
 
-_See the [usage page](https://github.com/pvienneau/atom-json-generator/wiki/Usage)_ for additional information.
+_See the [Usage Page](https://github.com/pvienneau/atom-json-generator/wiki/Usage)_ for additional information.
 
 Consider the following `.template.json` file:
 
@@ -62,3 +62,7 @@ Running <kbd>cmd</kbd>+<kbd>shift</kbd>+<kbd>p</kbd> will generate the following
     ]
 }
 ```
+
+## Share your Feedback!
+
+This is an early release of the package. I am looking for feedback as to what data generation functions would be interesting to have as part of this package. If you have ideas, feel free to open an [issue](https://github.com/pvienneau/atom-json-generator/issues)!
