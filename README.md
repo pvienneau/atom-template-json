@@ -4,7 +4,7 @@ Simply manage your JSON template structure, while Atom generates the JSON data f
 
 ## Code Example:
 
-```json
+```
 {
     "users": [
         {{repeat(5)}}
