@@ -1,5 +1,6 @@
 [
-   {
-       "test": {{string(15)}}
-   }
+    {{repeat(1)}}
+    {
+        "test": {{string(15)}}
+    }
 ]

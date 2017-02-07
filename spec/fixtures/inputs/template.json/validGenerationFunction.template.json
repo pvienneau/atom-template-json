@@ -1,0 +1,7 @@
+{
+    "uid": {{uid()}},
+    "guid": {{guid()}},
+    "string": {{string(15)}},
+    "integer": {{rand(1000000, 10000000)}},
+    "datetime": {{rand_datetime()}}
+}

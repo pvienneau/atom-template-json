@@ -1,0 +1,6 @@
+[
+    {{repeat(2)}}
+    {
+        "repeated": "object"
+    }
+]
