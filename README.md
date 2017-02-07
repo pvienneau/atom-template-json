@@ -4,6 +4,10 @@ Simply define your JSON template structure, while Atom generates the JSON data f
 
 ## Code Example:
 
+_See the [usage page](https://github.com/pvienneau/atom-json-generator/wiki/Usage)_ for additional information.
+
+Consider the following `.template.json` file:
+
 ```
 {
     "users": [
@@ -19,7 +23,7 @@ Simply define your JSON template structure, while Atom generates the JSON data f
 }
 ```
 
-This will result in the following JSON:
+Running <kbd>cmd</kbd>+<kbd>shift</kbd>+<kbd>p</kbd> will generate the following JSON file:
 
 ```json
 {
