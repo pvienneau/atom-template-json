@@ -3,7 +3,7 @@
     "atom-text-editor": [
       {
         "label": "Generate JSON",
-        "command": "json-generator:generate"
+        "command": "template-json:generate"
       }
     ]
   },
@@ -12,11 +12,11 @@
       "label": "Packages",
       "submenu": [
         {
-          "label": "json-generator",
+          "label": "template-json",
           "submenu": [
             {
               "label": "Generate",
-              "command": "json-generator:generate"
+              "command": "template-json:generate"
             }
           ]
         }

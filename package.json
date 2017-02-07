@@ -4,14 +4,14 @@
     "version": "0.0.1",
     "description": "Simply maintain your JSON template structure, while Atom generates the dummy data for you.",
     "keywords": ["json", "generator", "template", "structure", "compiler"],
-    "repository": "https://github.com/atom/json-generator",
+    "repository": "https://github.com/pvienneau/atom-json-generator",
     "license": "MIT",
     "engines": {
         "atom": ">=1.0.0 <2.0.0"
     },
-    "main": "./lib/json-generator",
+    "main": "./lib/template-json",
     "scripts": {
-        "test": "atom --test --timeout 4 ./spec/atom-json-generator-spec.js"
+        "test": "atom --test --timeout 4 ./spec/template-json-spec.js"
     },
     "dependencies": {
         "atom-package-deps": "^4.3.1",

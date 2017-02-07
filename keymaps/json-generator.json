@@ -1,5 +1,5 @@
 {
   "atom-workspace": {
-    "cmd-shift-j": "json-generator:generate"
+    "cmd-shift-j": "template-json:generate"
   }
 }
