@@ -1,6 +1,6 @@
 # Atom JSON Generator
 
-Simply define your JSON template structure, while Atom generates the JSON data for you.
+Simply maintain your JSON template structure, while Atom generates the dummy data for you.
 
 ## Code Example
 

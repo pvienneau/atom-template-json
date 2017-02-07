@@ -1,8 +1,8 @@
 {
-    "name": "json-generator",
+    "name": "template-json",
     "author": "Patrick Vienneau <pvien027@gmail.com>",
     "version": "0.0.1",
-    "description": "A short description of your package",
+    "description": "Simply maintain your JSON template structure, while Atom generates the dummy data for you.",
     "keywords": ["json", "generator", "template", "structure", "compiler"],
     "repository": "https://github.com/atom/json-generator",
     "license": "MIT",
