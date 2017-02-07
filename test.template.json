@@ -1,6 +1,12 @@
-[
-    {{repeat(1)}}
-    {
-        "test": {{string(15)}}
-    }
-]
+{
+    "users": [
+        {{repeat(5)}}
+        {
+            "id": {{id()}},
+            "guid": {{guid()}},
+            "description": {{string(50)}},
+            "birthyear": {{rand(1975, 2005)}},
+            "date_created": {{rand_datetime()}}
+        }
+    ]
+}

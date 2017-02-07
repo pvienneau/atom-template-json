@@ -8,7 +8,7 @@ module.exports = {
             //valid
         }catch(e){
             //invalid
-            console.log(e);
+            
             return false;
         }
 
