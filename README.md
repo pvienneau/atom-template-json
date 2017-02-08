@@ -1,6 +1,8 @@
-# Atom JSON Generator
+# Template JSON
 
 Simply maintain your JSON template structure, while Atom generates the dummy data for you.
+
+![Template JSON](https://github.com/pvienneau/atom-template-json/raw/master/resources/usage.gif)
 
 ## Code Example
 
