@@ -90,7 +90,7 @@ describe('extensible-compiler', () => {
 
         describe('email()', () => {
             it('should return an email', () => {
-                expect(actions.call('email')).toMatch(/^"[a-z]{4,}.[a-z]{4,}.[a-z]{4,}\@[a-z]{4,}\.[a-z]+"$/gi);
+                expect(actions.call('email')).toMatch(/^"[a-z]{4,}.[a-z]{4,}.[a-z]{4,}\@[a-z]{4,}\.[a-z]+"$/g);
             });
         });
 
