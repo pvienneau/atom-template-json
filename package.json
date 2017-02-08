@@ -1,25 +1,31 @@
 {
-    "name": "template-json",
-    "author": "Patrick Vienneau <pvien027@gmail.com>",
-    "version": "0.0.1",
-    "description": "Simply maintain your JSON template structure, while Atom generates the dummy data for you.",
-    "keywords": ["json", "generator", "template", "structure", "compiler"],
-    "repository": "https://github.com/pvienneau/atom-json-generator",
-    "license": "MIT",
-    "engines": {
-        "atom": ">=1.0.0 <2.0.0"
-    },
-    "main": "./lib/template-json",
-    "scripts": {
-        "test": "atom --test --timeout 4 ./spec/template-json-spec.js"
-    },
-    "dependencies": {
-        "atom-package-deps": "^4.3.1",
-        "extensible-compiler": "^1.1.1",
-        "fs": "^0.0.1-security",
-        "moment": "^2.17.1"
-    },
-    "package-deps": [
-        "atom-language-template-json"
-    ]
+  "name": "template-json",
+  "author": "Patrick Vienneau <pvien027@gmail.com>",
+  "version": "0.0.2",
+  "description": "Simply maintain your JSON template structure, while Atom generates the dummy data for you.",
+  "keywords": [
+    "json",
+    "generator",
+    "template",
+    "structure",
+    "compiler"
+  ],
+  "repository": "https://github.com/pvienneau/atom-json-generator",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "main": "./lib/template-json",
+  "scripts": {
+    "test": "atom --test --timeout 4 ./spec/template-json-spec.js"
+  },
+  "dependencies": {
+    "atom-package-deps": "^4.3.1",
+    "extensible-compiler": "^1.1.1",
+    "fs": "^0.0.1-security",
+    "moment": "^2.17.1"
+  },
+  "package-deps": [
+    "atom-language-template-json"
+  ]
 }
