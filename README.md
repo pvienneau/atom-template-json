@@ -16,8 +16,8 @@ Consider the following `.template.json` file:
             "id": {{id()}},
             "guid": {{guid()}},
             "description": {{string(50)}},
-            "birth_year": {{rand(1975, 2005)}},
-            "date_created": {{rand_datetime()}}
+            "birth_year": {{random(1975, 2005)}},
+            "date_created": {{datetime()}}
         }
     ]
 }
