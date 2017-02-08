@@ -1,0 +1,6 @@
+{
+    "id": {{id()}},
+    "timestamp": {{timestamp()}},
+    "boolean": {{boolean()}},
+    "email": {{email()}}
+}

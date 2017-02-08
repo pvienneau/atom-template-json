@@ -3,5 +3,5 @@
     "guid": {{guid()}},
     "string": {{string(15)}},
     "integer": {{random(1000000, 10000000)}},
-    "datetime": {{datetime()}}
+    "datetime": {{timestamp()}}
 }
