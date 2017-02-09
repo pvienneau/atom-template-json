@@ -195,7 +195,7 @@ describe('extensible-compiler', () => {
 
         describe('name()', () => {
             it('should return a string of two words', () => {
-                expect(actions.call('name')).toMatch(/^\w+\s\w+$/ig);
+                expect(actions.call('name')).toMatch(/^"\w+\s\w+"$/ig);
             });
         });
     });
