@@ -192,5 +192,11 @@ describe('extensible-compiler', () => {
                 expect(actions.call('id')).toBe(1);
             });
         });
+
+        describe('name()', () => {
+            it('should return a string of two words', () => {
+                expect(actions.call('name')).toMatch(/^\w+\s\w+$/ig);
+            });
+        });
     });
 });
