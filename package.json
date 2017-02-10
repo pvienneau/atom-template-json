@@ -27,5 +27,8 @@
   },
   "package-deps": [
     "atom-language-template-json"
-  ]
+  ],
+  "devDependencies": {
+    "coffeelint": "^1.16.0"
+  }
 }
