@@ -1,26 +1,32 @@
 {
-  "context-menu": {
-    "atom-text-editor": [
-      {
-        "label": "Generate JSON",
-        "command": "template-json:generate"
-      }
-    ]
-  },
-  "menu": [
-    {
-      "label": "Packages",
-      "submenu": [
-        {
-          "label": "template-json",
-          "submenu": [
+    "context-menu": {
+        "atom-text-editor": [
             {
-              "label": "Generate",
-              "command": "template-json:generate"
+                "label": "Generate JSON from file",
+                "command": "template-json:generate"
+            }, {
+                "label": "Generate all JSON files",
+                "command": "template-json:generate-all"
             }
-          ]
+        ]
+    },
+    "menu": [
+        {
+            "label": "Packages",
+            "submenu": [
+                {
+                    "label": "template-json",
+                    "submenu": [
+                        {
+                            "label": "Generate JSON from file",
+                            "command": "template-json:generate"
+                        }, {
+                            "label": "Generate all JSON files",
+                            "command": "template-json:generate-all"
+                        }
+                    ]
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }
