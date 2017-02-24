@@ -15,7 +15,7 @@ describe('extensible-compiler', () => {
 
     describe('.json', () => {
         const JSONInputs = inputs[`json`];
-        const JSONSchemas = schemas[`json`];
+        const JSONSchemas = schemas [`json`];
 
         it('should pass valid JSON value', () => {
             schema.input = JSONInputs.valid;
@@ -113,7 +113,7 @@ describe('extensible-compiler', () => {
                 let computedMin;// = max - ((max-min)/2);
                 let computedMax;// = max - ((max-min)/2);
 
-                for(let kk = 0; kk < 200; kk++){
+                for(let kk = 0; kk < 1000; kk++){
                     const result = actions.call('random', min, max);
 
                     if(computedMin === undefined || result < computedMin) computedMin = result;
@@ -142,7 +142,7 @@ describe('extensible-compiler', () => {
             it('should not accept negative numbers as a minimum value', () => {
                 const expectedMin = 0;
 
-                const { min } = fragileRandomTester(expectedMin-1);
+                const { min } = fragileRandomTester(expectedMin-1, 1);
 
                 expect(min).toBe(expectedMin);
             });
