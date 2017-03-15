@@ -1,7 +1,7 @@
 {
   "name": "template-json",
   "author": "Patrick Vienneau <pvien027@gmail.com>",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Simply maintain your JSON template structure, while Atom generates the dummy data for you.",
   "keywords": [
     "json",
