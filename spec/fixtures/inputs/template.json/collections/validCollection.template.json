@@ -1,0 +1,7 @@
+[
+    {{repeat(3)}}
+    {
+        "id": {{id()}},
+        "oneOf": {{oneOf('one', 'two', 'three', 'four', 'five')}}
+    }
+]

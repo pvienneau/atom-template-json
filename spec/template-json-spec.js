@@ -60,7 +60,7 @@ describe('extensible-compiler', () => {
 
         describe('email()', () => {
             it('should return an email', () => {
-                expect(actions.call('email')).toMatch(/^"[a-z]{4,}.[a-z]{4,}\@[a-z]{4,}\.[a-z]{2,}"$/g);
+                expect(actions.call('email')).toMatch(/^"[a-z]+.[a-z]+\@[a-z+\.[a-z]+"$/g);
             });
         });
 
@@ -178,6 +178,20 @@ describe('extensible-compiler', () => {
         describe('lastName()', () => {
             it('should return a string of one word', () => {
                 expect(actions.call('lastName').split(' ').length).toBe(1);
+            });
+        });
+
+        describe('oneOf()', () => {
+            it('should return one of the strings passed as parameter', () => {
+                const collection = [
+                    'one',
+                    'two',
+                    'three',
+                    'four',
+                    'five',
+                ];
+
+                expect(collection).toContain(actions.call('_oneOf', ...collection));
             });
         });
     });
