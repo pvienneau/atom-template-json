@@ -1,0 +1,10 @@
+[
+    {{repeat(2)}}
+    {
+        "id": {{id()}},
+        "first_name": {{firstName()}},
+        "last_name": {{lastName()}},
+        "full_name": {{fullName()}},
+        "email": {{email()}}
+    }
+]

@@ -1,4 +1,6 @@
 const Schema = require('extensible-compiler').default;
+require('jasmine-expect');
+
 const jsonTMap = require('../lib/json-map.js');
 const GenerationActions = require('../lib/generation-actions.js');
 const inputs = require('./fixtures/inputs');
@@ -43,38 +45,6 @@ describe('extensible-compiler', () => {
         });
     });
 
-    describe('.template.json', () => {
-        const templateJSONInputs = inputs[`template.json`];
-        const templateJSONSchemas = schemas[`template.json`];
-
-        it('should pass valid Template JSON value with generation function', () => {
-            schema.input = templateJSONInputs.validGenerationFunction;
-            const result = schema.parse();
-
-            expect(result).toBeTruthy();
-            expect(isValidJSON(schema.eatenInput)).toBeTruthy();
-            //expect(isSameStructure(schema.eatenInput, templateJSONSchemas.validGenerationFunction)).toBeTruthy();
-        });
-
-        it('should pass valid Template JSON value with transform function', () => {
-            schema.input = templateJSONInputs.validTransformFunction;
-            const result = schema.parse();
-
-            expect(result).toBeTruthy();
-            expect(isValidJSON(schema.eatenInput)).toBeTruthy();
-            //expect(isSameStructure(schema.eatenInput, templateJSONSchemas.validTransformFunction)).toBeTruthy();
-        });
-
-        it('should pass valid Template JSON value with both generation and transform functions', () => {
-            schema.input = templateJSONInputs.valid;
-            const result = schema.parse();
-
-            expect(result).toBeTruthy();
-            expect(isValidJSON(schema.eatenInput)).toBeTruthy();
-            //expect(isSameStructure(schema.eatenInput)).toBeTruthy();
-        });
-    });
-
     describe('actions', () => {
         let actions;
 
@@ -90,7 +60,7 @@ describe('extensible-compiler', () => {
 
         describe('email()', () => {
             it('should return an email', () => {
-                expect(actions.call('email')).toMatch(/^"[a-z]{4,}.[a-z]{4,}.[a-z]{4,}\@[a-z]{4,}\.[a-z]+"$/g);
+                expect(actions.call('email')).toMatch(/^"[a-z]{4,}.[a-z]{4,}\@[a-z]{4,}\.[a-z]{2,}"$/g);
             });
         });
 
@@ -99,10 +69,10 @@ describe('extensible-compiler', () => {
                 expect(typeof actions.call('guid')).toBe('number');
             });
 
-            it('should not reset count when _resetId() is called', () => {
+            it('should not reset count when resetId() is called', () => {
                 expect(actions.call('guid')).toBe(1);
 
-                actions._resetId();
+                actions.resetId();
 
                 expect(actions.call('guid')).toBe(2);
             });
@@ -184,18 +154,77 @@ describe('extensible-compiler', () => {
                 expect(typeof actions.call('id')).toBe('number');
             });
 
-            it('should reset count when _resetId() is called', () => {
+            it('should reset count when resetId() is called', () => {
                 expect(actions.call('id')).toBe(1);
 
-                actions._resetId();
+                actions.resetId();
 
                 expect(actions.call('id')).toBe(1);
             });
         });
 
-        describe('name()', () => {
+        describe('fullName()', () => {
             it('should return a string of two words', () => {
-                expect(actions.call('name')).toMatch(/^"\w+\s\w+"$/ig);
+                expect(actions.call('fullName').split(' ').length).toBe(2);
+            });
+        });
+
+        describe('firstName()', () => {
+            it('should return a string of one word', () => {
+                expect(actions.call('firstName').split(' ').length).toBe(1);
+            });
+        });
+
+        describe('lastName()', () => {
+            it('should return a string of one word', () => {
+                expect(actions.call('lastName').split(' ').length).toBe(1);
+            });
+        });
+    });
+
+    describe('.template.json', () => {
+        const templateJSONInputs = inputs[`template.json`];
+        const templateJSONSchemas = schemas[`template.json`];
+
+        it('should pass valid Template JSON value with generation function', () => {
+            schema.input = templateJSONInputs.validGenerationFunction;
+            const result = schema.parse();
+
+            expect(result).toBeTruthy();
+            expect(isValidJSON(schema.eatenInput)).toBeTruthy();
+            //expect(isSameStructure(schema.eatenInput, templateJSONSchemas.validGenerationFunction)).toBeTruthy();
+        });
+
+        it('should pass valid Template JSON value with transform function', () => {
+            schema.input = templateJSONInputs.validTransformFunction;
+            const result = schema.parse();
+
+            expect(result).toBeTruthy();
+            expect(isValidJSON(schema.eatenInput)).toBeTruthy();
+            //expect(isSameStructure(schema.eatenInput, templateJSONSchemas.validTransformFunction)).toBeTruthy();
+        });
+
+        it('should pass valid Template JSON value with both generation and transform functions', () => {
+            schema.input = templateJSONInputs.valid;
+            const result = schema.parse();
+
+            expect(result).toBeTruthy();
+            expect(isValidJSON(schema.eatenInput)).toBeTruthy();
+            //expect(isSameStructure(schema.eatenInput)).toBeTruthy();
+        });
+
+        it('should maintain values within same transform action for generator functions', () => {
+            schema.input = templateJSONInputs.functionsPersistence;
+            const result = schema.parse();
+
+            expect(result).toBeTruthy();
+            expect(isValidJSON(schema.eatenInput)).toBeTruthy();
+
+            const JSONResult = JSON.parse(schema.eatenInput);
+
+            JSONResult.map(object => {
+                expect(object.full_name).toBe(`${object.first_name} ${object.last_name}`);
+                expect(object.email).toStartWith(`${object.first_name.toLowerCase()}.${object.last_name.toLowerCase()}@`);
             });
         });
     });

@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+add-matchers@0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/add-matchers/-/add-matchers-0.5.0.tgz#502190e4750cd5721618393268b61a157366e765"
+
 atom-package-deps@^4.3.1:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/atom-package-deps/-/atom-package-deps-4.3.1.tgz#7a3655dd2224c72aceaf481968f834f67e9a2870"
@@ -88,6 +92,12 @@ inflight@^1.0.4:
 inherits@2:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
+
+jasmine-expect@^3.7.0:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/jasmine-expect/-/jasmine-expect-3.7.0.tgz#841e1382f4bff0258c8dc96eca27c4fbc6ae4887"
+  dependencies:
+    add-matchers "0.5.0"
 
 lodash.uniq@^4.5.0:
   version "4.5.0"

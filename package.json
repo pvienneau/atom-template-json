@@ -19,16 +19,17 @@
   "scripts": {
     "test": "atom --test --timeout 4 ./spec/template-json-spec.js"
   },
+  "package-deps": [
+    "atom-language-template-json"
+  ],
   "dependencies": {
     "atom-package-deps": "^4.3.1",
     "extensible-compiler": "^1.1.1",
     "fs": "^0.0.1-security",
     "moment": "^2.17.1"
   },
-  "package-deps": [
-    "atom-language-template-json"
-  ],
   "devDependencies": {
-    "coffeelint": "^1.16.0"
+    "coffeelint": "^1.16.0",
+    "jasmine-expect": "^3.7.0"
   }
 }

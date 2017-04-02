@@ -1,8 +1,8 @@
-module.exports = {};
-module.exports.getFileExtension = (path) => {
-    const pIndex = path.indexOf('.');
-    return path.substr(pIndex);
-};
-module.exports.isFileExtension = (path, extension) => {
-    return module.exports.getFileExtension(path) === extension;
+module.exports = {
+    hasFileExtension: (path, extension) => {
+        let str = path;
+        if(extension.charAt(0) == 0) str = str.substr(1);
+
+        return path.endsWith(extension);
+    },
 };
