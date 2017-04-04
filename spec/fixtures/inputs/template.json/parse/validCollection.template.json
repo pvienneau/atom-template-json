@@ -1,3 +1,3 @@
 {
-    "oneOf": {{oneOf('one', 'two', 'three', 'four', 'five')}}
+    "oneOf": {{oneOf(1, 2, 3, 4, 5)}}
 }

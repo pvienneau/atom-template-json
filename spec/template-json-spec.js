@@ -10,9 +10,11 @@ const prettydiff = require('../bin/prettydiff');
 
 describe('extensible-compiler', () => {
     let schema;
+    let actions;
 
     beforeEach(() => {
         schema = new Schema(jsonTMap);
+        actions = new GenerationActions();
     });
 
     describe('.json', () => {
@@ -46,12 +48,6 @@ describe('extensible-compiler', () => {
     });
 
     describe('actions', () => {
-        let actions;
-
-        beforeEach(() => {
-            actions = new GenerationActions();
-        });
-
         describe('boolean()', () => {
             it('should return a stringified boolean value', () => {
                 expect(actions.call('boolean')).toMatch(/^(true|false)$/gi);
@@ -83,7 +79,7 @@ describe('extensible-compiler', () => {
                 let computedMin;// = max - ((max-min)/2);
                 let computedMax;// = max - ((max-min)/2);
 
-                for(let kk = 0; kk < 200; kk++){
+                for(let kk = 0; kk < 100; kk++){
                     const result = actions.call('random', min, max);
 
                     if(computedMin === undefined || result < computedMin) computedMin = result;
@@ -112,7 +108,7 @@ describe('extensible-compiler', () => {
             it('should not accept negative numbers as a minimum value', () => {
                 const expectedMin = 0;
 
-                const { min } = fragileRandomTester(expectedMin-1);
+                const { min } = fragileRandomTester(expectedMin-1, 1);
 
                 expect(min).toBe(expectedMin);
             });
@@ -182,7 +178,19 @@ describe('extensible-compiler', () => {
         });
 
         describe('oneOf()', () => {
-            it('should return one of the strings passed as parameter', () => {
+            it('should return one of the integers passed as parameter', () => {
+                const collection = [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                ];
+
+                expect(collection).toContain(actions.call('_oneOf', ...collection));
+            });
+
+            xit('should return one of the strings passed as parameter', () => {
                 const collection = [
                     'one',
                     'two',
@@ -225,6 +233,14 @@ describe('extensible-compiler', () => {
             expect(result).toBeTruthy();
             expect(isValidJSON(schema.eatenInput)).toBeTruthy();
             //expect(isSameStructure(schema.eatenInput)).toBeTruthy();
+        });
+
+        it('should pass valid Template JSON value with multiple parameters to a function', () => {
+            schema.input = templateJSONInputs.validCollection;
+            const result = schema.parse();
+
+            expect(result).toBeTruthy();
+            expect(isValidJSON(schema.eatenInput)).toBeTruthy();
         });
 
         it('should maintain values within same transform action for generator functions', () => {
