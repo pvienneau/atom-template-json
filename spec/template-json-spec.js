@@ -190,7 +190,7 @@ describe('extensible-compiler', () => {
                 expect(collection).toContain(actions.call('_oneOf', ...collection));
             });
 
-            xit('should return one of the strings passed as parameter', () => {
+            it('should return one of the strings passed as parameter', () => {
                 const collection = [
                     'one',
                     'two',
